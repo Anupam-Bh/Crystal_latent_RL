@@ -23,6 +23,7 @@ The environment decodes a latent vector `z → FTCP → (optional CIF/POSCAR)` a
   Simple random exploration in latent space (sample random actions and step).
 ```bash
   python walk_in_env.py
+```
 
 - `train_ppo_sb3.py`  
   PPO training script using Stable-Baselines3, with checkpoint saving and TensorBoard logs.
@@ -58,6 +59,7 @@ install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib
 ### Then run walk_in_env  : it will generate the FTCP representation bounds from Materials Project.  It can also explore the latent space. 
 ### Then run train_ppo to train the RL.
 ### Files in the 'data' and 'crystal_lsbo_repo' folder are data-files and model checkpoints which can be obtained from Crystal-LSBO repo (https://github.com/onurboyar/Crystal-LSBO)
+
 
 
 
