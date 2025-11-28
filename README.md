@@ -53,7 +53,9 @@ install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib
 
 
 ### First  in working_VAE_CV   run data_prep_cv_vae_pred_head.py  : It will create VAE checkpoints for measurement analysis
-### Then run walk_in_env  : it will generate the FTCP representation bounds from Materials Project and then it will explore the latent space. 
+### Then run walk_in_env  : it will generate the FTCP representation bounds from Materials Project.  It can also explore the latent space. 
+### Then run train_ppo to train the RL.
 ### Files in the 'data' and 'crystal_lsbo_repo' folder are data-files and model checkpoints which can be obtained from Crystal-LSBO repo (https://github.com/onurboyar/Crystal-LSBO)
+
 
 
