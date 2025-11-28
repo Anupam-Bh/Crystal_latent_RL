@@ -1,5 +1,8 @@
 # Crystal Latent-Space RL 
 
+
+<img width="2562" height="1329" alt="Pipeline1 drawio" src="https://github.com/user-attachments/assets/1257030a-1309-4adf-8a5e-7a4755f865c8" />
+
 This repo contains a Gymnasium environment (`CrystalLatentEnv`) for exploring the **Combined-VAE latent space** from the Crystal-LSBO architecture, plus two ways to explore it:
 
 1. **Random latent walk** (`walk_in_env.py`)
@@ -51,3 +54,4 @@ Use Python 3.9+ and install dependencies:
 ```bash
 pip install -U pip
 pip install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib
+
