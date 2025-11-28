@@ -47,11 +47,11 @@ Set `max_steps=200` to enforce 200-step episodes.
 ---
 
 ## Installation
-
 ### Recommended Python environment
 Use Python 3.9+ and install dependencies:
+install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib
 
-```bash
-pip install -U pip
-pip install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib
+
+## First  in working_VAE_CV   run data_prep_cv_vae_pred_head.py  : It will create VAE checkpoints for measurement analysis
+## Then run walk_in_env  : it will generate the FTCP representation bounds from Materials Project and then it will explore the latent space.
 
