@@ -1,0 +1,53 @@
+# Crystal Latent-Space RL 
+
+This repo contains a Gymnasium environment (`CrystalLatentEnv`) for exploring the **Combined-VAE latent space** from the Crystal-LSBO architecture, plus two ways to explore it:
+
+1. **Random latent walk** (`walk_in_env.py`)
+2. **Reinforcement Learning** using **Stable-Baselines3 PPO** (`train_ppo_sb3.py`)
+
+The environment decodes a latent vector `z → FTCP → (optional CIF/POSCAR)` and computes rewards using:
+- an XGBoost formation energy predictor (black-box surrogate),
+- optional additional physics/ML reward terms (e.g., Fairchem adsorption energy + CV/VAE overpotential pipeline).
+
+---
+
+## Files
+
+- `crystal_latent_env.py`  
+  Gymnasium environment class `CrystalLatentEnv` operating in latent space.
+
+- `walk_in_env.py`  
+  Simple random exploration in latent space (sample random actions and step).
+
+- `train_ppo_sb3.py`  
+  PPO training script using Stable-Baselines3, with checkpoint saving and TensorBoard logs.
+
+---
+
+## Environment overview
+
+### State and actions
+- **Internal state**: latent vector `z` of dimension `combined_z_size`.
+- **Action space**: `Discrete(2 * combined_z_size)`  
+  Each dimension has two actions: `+step_size` or `-step_size`.
+
+### Observations
+- Default observation is a flattened slice of the decoded FTCP tensor:
+  - FTCP slice `(185, 4)` → flattened to `740`-dim vector.
+
+### Episode length
+The environment terminates when:
+- `step_count >= max_steps`
+
+Set `max_steps=200` to enforce 200-step episodes.
+
+---
+
+## Installation
+
+### Recommended Python environment
+Use Python 3.9+ and install dependencies:
+
+```bash
+pip install -U pip
+pip install gymnasium stable-baselines3 torch numpy pandas pymatgen xgboost joblib

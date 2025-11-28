@@ -1,0 +1,13 @@
+{
+  "names": [
+    "HER_overpotential",
+    "HER_i0"
+  ],
+  "count_images": 50,
+  "count_with_gt": 50,
+  "MAE_per_dim": [
+    0.028183505535125733,
+    1.5452483859229087
+  ],
+  "MAE_overall": 0.7867159457290173
+}
